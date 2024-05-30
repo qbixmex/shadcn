@@ -9,6 +9,7 @@ const links = [
   { name: "accordion", href: "accordion" },
   { name: "alert", href: "alert" },
   { name: "button", href: "button" },
+  { name: "dialog", href: "dialog" },
 ];
 
 type Props = { children: React.ReactNode };
