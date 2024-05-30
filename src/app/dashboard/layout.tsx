@@ -14,6 +14,7 @@ const links = [
   { name: "alert dialog", href: "alert-dialog" },
   { name: "dialog", href: "dialog" },
   { name: "badge", href: "badge" },
+  { name: "calendar", href: "calendar" },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
 const menuItems = [ homeLink, ...links ];
