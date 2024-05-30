@@ -1,50 +1,63 @@
 "use client";
 
-import { useState } from "react";
+import { Copy } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
-import { Button } from "@/components/ui/button"
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export const DialogComponent = () => {
-  const [dialogOpen, setDialogOpen] = useState(false);
+  const handleCopyText = () => {
+    navigator.clipboard.writeText("https://ui.shadcn.com/docs/installation");
+  };
 
   return (
-    <main className="grid grid-cols-2 gap-3">
-      <AlertDialog
-        open={dialogOpen}
-        onOpenChange={setDialogOpen}
-      >
-        <AlertDialogTrigger asChild>
-          <Button variant="outline">Show Dialog</Button>
-        </AlertDialogTrigger>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-            <AlertDialogDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel onClick={() => console.log("Cancel")}>Cancel</AlertDialogCancel>
-            <AlertDialogAction onClick={() => console.log("Continue")}>Continue</AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
-
-      <Button
-        variant="info"
-        onClick={() => setDialogOpen(true)}
-      >Open Dialog Manually</Button>
+    <main className="max-w-sm mx-auto">
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant="outline" className="w-full">Share</Button>
+        </DialogTrigger>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Share link</DialogTitle>
+            <DialogDescription>
+              Anyone who has this link will be able to view this.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex items-center space-x-2">
+            <div className="grid flex-1 gap-2">
+              <Label htmlFor="link" className="sr-only">
+                Link
+              </Label>
+              <Input
+                id="link"
+                defaultValue="https://ui.shadcn.com/docs/installation"
+                readOnly
+              />
+            </div>
+            <Button type="submit" size="sm" className="px-3" onClick={handleCopyText}>
+              <span className="sr-only">Copy</span>
+              <Copy className="h-4 w-4" />
+            </Button>
+          </div>
+          <DialogFooter className="sm:justify-start">
+            <DialogClose asChild>
+              <Button type="button" variant="secondary">
+                Close
+              </Button>
+            </DialogClose>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </main>
   );
 };

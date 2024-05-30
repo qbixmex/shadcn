@@ -9,6 +9,7 @@ const links = [
   { name: "accordion", href: "accordion" },
   { name: "alert", href: "alert" },
   { name: "button", href: "button" },
+  { name: "alert dialog", href: "alert-dialog" },
   { name: "dialog", href: "dialog" },
 ];
 
