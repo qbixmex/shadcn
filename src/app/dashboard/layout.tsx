@@ -2,10 +2,10 @@
 // https://tailwindcomponents.com/component/tailwind-css-admin-dashboard-layout
 
 import Link from "next/link";
-import { CloseButton, FacebookIcon, InstagramIcon, LogoIcon, MenuButton, TwitterIcon } from "./components/icons";
-import { GithubIcon } from "./components/icons/github.icon";
+import { CloseButton, FacebookIcon, GithubIcon, InstagramIcon, LogoIcon, MenuButton, TwitterIcon } from "@/modules";
 
 const links = [
+  { name: "home", href: "home" },
   { name: "accordion", href: "accordion" },
   { name: "alert", href: "alert" },
 ];
@@ -35,7 +35,7 @@ const DashboardLayout: React.FC<Props> = ({ children }) => {
                 <LogoIcon />
                 <span className="self-center whitespace-nowrap ml-2">
                   {" "}
-                  ShadCN/ui
+                  ShadCN | UI
                 </span>
               </a>
             </div>
