@@ -2,7 +2,7 @@
 // https://tailwindcomponents.com/component/tailwind-css-admin-dashboard-layout
 
 import Link from "next/link";
-import { CloseButton, FacebookIcon, GithubIcon, InstagramIcon, LogoIcon, MenuButton, TwitterIcon } from "@/modules";
+import { AvatarComponent, CloseButton, FacebookIcon, GithubIcon, InstagramIcon, LogoIcon, MenuButton, TwitterIcon } from "@/modules";
 
 
 const homeLink = { name: "home", href: "home" };
@@ -15,6 +15,7 @@ const links = [
   { name: "dialog", href: "dialog" },
   { name: "badge", href: "badge" },
   { name: "calendar", href: "calendar" },
+  { name: "avatar", href: "avatar" },
 ].sort((a, b) => a.name.localeCompare(b.name));
 
 const menuItems = [ homeLink, ...links ];
@@ -49,10 +50,7 @@ const DashboardLayout: React.FC<Props> = ({ children }) => {
               </a>
             </div>
             <div className="flex items-center">
-              {/* User Avatar */}
-              <div className="bg-blue-500 text-white p-2 rounded-full w-12 h-12 flex items-center justify-center">
-                DG
-              </div>
+              <AvatarComponent />
             </div>
           </div>
         </div>

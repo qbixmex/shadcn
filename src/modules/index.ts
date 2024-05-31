@@ -7,3 +7,4 @@ export * from "./alert-dialog";
 export * from "./dialog";
 export * from "./badge";
 export * from "./calendar";
+export * from "./avatar";
