@@ -6,7 +6,6 @@ import { AvatarComponent, CloseButton, FacebookIcon, GithubIcon, InstagramIcon, 
 
 
 const links = [
-  { name: "home", href: "home" },
   { name: "accordion", href: "accordion" },
   { name: "alert dialog", href: "alert-dialog" },
   { name: "alert", href: "alert" },
@@ -19,7 +18,9 @@ const links = [
   { name: "checkbox", href: "checkbox" },
   { name: "combobox", href: "combobox" },
   { name: "command", href: "command" },
+  { name: "context menu", href: "context-menu" },
   { name: "dialog", href: "dialog" },
+  { name: "home", href: "home" },
 ];
 
 type Props = { children: React.ReactNode };
