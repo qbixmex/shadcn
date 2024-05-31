@@ -1,11 +1,13 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
+import { Title } from "@/modules/components";
 
 export const BadgeComponent = () => {
 
   return (
     <main>
+      <Title>Badge</Title>
       <div className="inline-flex gap-2 mb-3">
         <Badge>default</Badge>
         <Badge variant="outline">outline</Badge>

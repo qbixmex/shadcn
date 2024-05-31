@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Calendar } from "@/components/ui/calendar"
+import { Title } from "@/modules/components";
 
 export const CalendarComponent = () => {
 
@@ -17,9 +18,7 @@ export const CalendarComponent = () => {
 
   return (
     <main>
-      <h1 className="text-5xl font-black text-stone-700 mb-5">
-        Calendar
-      </h1>
+      <Title>Calendar</Title>
 
       <section className="flex flex-col gap-5 md:flex-row md:flew-wrap mb-5">
         <Calendar

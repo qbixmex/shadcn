@@ -13,10 +13,12 @@ import {
   AlertDescription,
   AlertTitle,
 } from "@/components/ui/alert"
+import { Title } from "@/modules/components";
 
 export const Alert = () => {
   return (
     <div className="grid gap-3">
+      <Title>Alert</Title>
       <AlertUI>
         <EarthIcon className="h-4 w-4" />
         <AlertTitle>Alert 1</AlertTitle>

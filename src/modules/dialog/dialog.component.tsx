@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Title } from "@/modules/components";
 
 export const DialogComponent = () => {
   const handleCopyText = () => {
@@ -22,6 +23,7 @@ export const DialogComponent = () => {
 
   return (
     <main className="max-w-sm mx-auto">
+      <Title className="text-center">Dialog</Title>
       <Dialog>
         <DialogTrigger asChild>
           <Button variant="outline" className="w-full">Share</Button>

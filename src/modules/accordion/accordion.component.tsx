@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { Title } from "@/modules/components";
 
 type Item = {
   id: string;
@@ -36,13 +37,16 @@ const items: Item[] = [
 
 export const Accordion = () => {
   return (
-    <AccordionUI type="single" collapsible className="max-w-lg mx-auto">
-      {items.map(({ id, question, answer }) => (
-        <AccordionItem key={id} value={id}>
-          <AccordionTrigger>{ question }</AccordionTrigger>
-          <AccordionContent>{ answer }</AccordionContent>
-        </AccordionItem>
-      ))}
-    </AccordionUI>
+    <main className="max-w-lg mx-auto">
+      <Title>Alert</Title>
+      <AccordionUI type="single" collapsible>
+        {items.map(({ id, question, answer }) => (
+          <AccordionItem key={id} value={id}>
+            <AccordionTrigger>{ question }</AccordionTrigger>
+            <AccordionContent>{ answer }</AccordionContent>
+          </AccordionItem>
+        ))}
+      </AccordionUI>
+    </main>
   );
 };
