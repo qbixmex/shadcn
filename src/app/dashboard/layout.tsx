@@ -6,6 +6,7 @@ import { AvatarComponent, CloseButton, FacebookIcon, GithubIcon, InstagramIcon, 
 
 
 const links = [
+  { name: "home", href: "home" },
   { name: "accordion", href: "accordion" },
   { name: "alert dialog", href: "alert-dialog" },
   { name: "alert", href: "alert" },
@@ -20,7 +21,7 @@ const links = [
   { name: "command", href: "command" },
   { name: "context menu", href: "context-menu" },
   { name: "dialog", href: "dialog" },
-  { name: "home", href: "home" },
+  { name: "menu bar", href: "menu-bar" },
 ];
 
 type Props = { children: React.ReactNode };
@@ -100,45 +101,30 @@ const DashboardLayout: React.FC<Props> = ({ children }) => {
               </div>
             </div>
           </main>
-          <footer className="bg-white md:flex md:items-center md:justify-between shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4">
+          <footer className="bg-white md:flex md:items-center md:justify-between shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4 print:hidden">
             <ul className="flex items-center flex-wrap mb-6 md:mb-0">
               <li>
-                <a
-                  href="#"
-                  className="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6"
-                >
+                <a href="#" className="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">
                   Terms and conditions
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6"
-                >
+                <a href="#" className="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6"
-                >
+                <a href="#" className="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">
                   Licensing
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6"
-                >
+                <a href="#" className="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">
                   Cookie Policy
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-sm font-normal text-gray-500 hover:underline"
-                >
+                <a href="#" className="text-sm font-normal text-gray-500 hover:underline">
                   Contact
                 </a>
               </li>
@@ -158,7 +144,7 @@ const DashboardLayout: React.FC<Props> = ({ children }) => {
               </a>
             </div>
           </footer>
-          <p className="text-center text-sm text-gray-500 my-10">
+          <p className="text-center text-sm text-gray-500 my-10 print:hidden">
             &copy; 2019-{new Date().getFullYear()}{" "}
             <a href="#" className="hover:underline" target="_blank">
               Themesberg

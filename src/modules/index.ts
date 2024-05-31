@@ -14,3 +14,4 @@ export * from "./components";
 export * from "./context-menu";
 export * from "./dialog";
 export * from "./home";
+export * from "./menu-bar";
