@@ -1,1 +1,1 @@
-export * from "./checkbox.component";
+export * from "./command.component";
