@@ -17,6 +17,7 @@ const links = [
   { name: "card", href: "card" },
   { name: "carousel", href: "carousel" },
   { name: "checkbox", href: "checkbox" },
+  { name: "combobox", href: "combobox" },
   { name: "command", href: "command" },
   { name: "dialog", href: "dialog" },
 ];

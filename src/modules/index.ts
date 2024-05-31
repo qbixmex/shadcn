@@ -8,6 +8,7 @@ export * from "./calendar";
 export * from "./card";
 export * from "./carousel";
 export * from "./checkbox";
+export * from "./combobox";
 export * from "./command";
 export * from "./components";
 export * from "./dialog";
