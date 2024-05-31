@@ -14,4 +14,5 @@ export * from "./components";
 export * from "./context-menu";
 export * from "./dialog";
 export * from "./home";
+export * from "./input-otp";
 export * from "./menu-bar";

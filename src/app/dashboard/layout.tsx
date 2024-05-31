@@ -22,6 +22,7 @@ const links = [
   { name: "context menu", href: "context-menu" },
   { name: "dialog", href: "dialog" },
   { name: "menu bar", href: "menu-bar" },
+  { name: "input otp", href: "input-otp" },
 ];
 
 type Props = { children: React.ReactNode };
