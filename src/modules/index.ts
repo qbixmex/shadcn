@@ -16,3 +16,4 @@ export * from "./dialog";
 export * from "./home";
 export * from "./input-otp";
 export * from "./menu-bar";
+export * from "./progress";

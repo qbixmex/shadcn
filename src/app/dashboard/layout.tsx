@@ -21,8 +21,9 @@ const links = [
   { name: "command", href: "command" },
   { name: "context menu", href: "context-menu" },
   { name: "dialog", href: "dialog" },
-  { name: "menu bar", href: "menu-bar" },
   { name: "input otp", href: "input-otp" },
+  { name: "menu bar", href: "menu-bar" },
+  { name: "progress", href: "progress" },
 ];
 
 type Props = { children: React.ReactNode };
