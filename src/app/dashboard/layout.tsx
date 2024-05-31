@@ -5,22 +5,20 @@ import Link from "next/link";
 import { AvatarComponent, CloseButton, FacebookIcon, GithubIcon, InstagramIcon, LogoIcon, MenuButton, TwitterIcon } from "@/modules";
 
 
-const homeLink = { name: "home", href: "home" };
-
 const links = [
+  { name: "home", href: "home" },
   { name: "accordion", href: "accordion" },
-  { name: "alert", href: "alert" },
-  { name: "button", href: "button" },
   { name: "alert dialog", href: "alert-dialog" },
-  { name: "dialog", href: "dialog" },
-  { name: "badge", href: "badge" },
-  { name: "calendar", href: "calendar" },
+  { name: "alert", href: "alert" },
   { name: "avatar", href: "avatar" },
+  { name: "badge", href: "badge" },
+  { name: "button", href: "button" },
+  { name: "calendar", href: "calendar" },
   { name: "card", href: "card" },
   { name: "carousel", href: "carousel" },
-].sort((a, b) => a.name.localeCompare(b.name));
-
-const menuItems = [ homeLink, ...links ];
+  { name: "checkbox", href: "checkbox" },
+  { name: "dialog", href: "dialog" },
+];
 
 type Props = { children: React.ReactNode };
 
@@ -67,7 +65,7 @@ const DashboardLayout: React.FC<Props> = ({ children }) => {
             <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
               <div className="flex-1 px-3 bg-white divide-y space-y-1">
                 <ul className="space-y-2 pb-2">
-                  {menuItems.map((link) => (
+                  {links.map((link) => (
                     <li key={link.href}>
                       <Link
                         href={link.href}
