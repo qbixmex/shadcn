@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
-import { Toaster as SonnerToaster } from "@/components/ui/sonner"
+import { Toaster as SonnerToaster } from "@/components/ui/sonner";
+import { Toaster } from "@/components/ui/toaster";
+
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -25,6 +27,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
       )}>
         {children}
         <SonnerToaster richColors />
+        <Toaster />
       </body>
     </html>
   );
