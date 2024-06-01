@@ -18,3 +18,4 @@ export * from "./input-otp";
 export * from "./menu-bar";
 export * from "./progress";
 export * from "./sheet";
+export * from "./skeleton";

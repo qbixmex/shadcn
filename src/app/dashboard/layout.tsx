@@ -6,6 +6,7 @@ import { AvatarComponent, CloseButton, FacebookIcon, GithubIcon, InstagramIcon, 
 
 
 const links = [
+  { name: "home", href: "home" },
   { name: "accordion", href: "accordion" },
   { name: "alert dialog", href: "alert-dialog" },
   { name: "alert", href: "alert" },
@@ -20,11 +21,11 @@ const links = [
   { name: "command", href: "command" },
   { name: "context menu", href: "context-menu" },
   { name: "dialog", href: "dialog" },
-  { name: "home", href: "home" },
   { name: "input otp", href: "input-otp" },
   { name: "menu bar", href: "menu-bar" },
   { name: "progress", href: "progress" },
   { name: "sheet", href: "sheet" },
+  { name: "skeleton", href: "skeleton" },
 ];
 
 type Props = { children: React.ReactNode };
