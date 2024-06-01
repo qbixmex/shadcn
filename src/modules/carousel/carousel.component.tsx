@@ -46,7 +46,7 @@ const food: Food[] = [
 
 export const CarouselComponent = () => {
   return (
-    <main className="max-w-xl mx-auto sm:text-lg">
+    <section className="max-w-xl mx-auto sm:text-lg">
       <Title className="text-center">Carousel</Title>
       <section>
         <Carousel
@@ -74,6 +74,6 @@ export const CarouselComponent = () => {
           <CarouselNext className="hidden md:flex" />
         </Carousel>
       </section>
-    </main>
+    </section>
   );
 };

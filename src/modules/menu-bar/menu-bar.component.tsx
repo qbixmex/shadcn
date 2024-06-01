@@ -32,7 +32,7 @@ export const MenuBarComponent = () => {
   }, []);
 
   return (
-    <main className="min-h-[500px]">
+    <section className="min-h-[500px]">
       <Title className="text-center mb-10">Menu Bar</Title>
 
       <section>
@@ -131,6 +131,6 @@ export const MenuBarComponent = () => {
           </main>
         </article>
       </section>
-    </main>
+    </section>
   );
 };

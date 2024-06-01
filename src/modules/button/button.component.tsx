@@ -6,7 +6,7 @@ import { Title } from "@/modules/components";
 
 export const ButtonComponent = () => {
   return (
-    <main>
+    <section>
       <Title>Button</Title>
       <section className="grid grid-cols-7 gap-2">
         <Button>default</Button>
@@ -29,6 +29,6 @@ export const ButtonComponent = () => {
           saving
         </Button>
       </section>
-    </main>
+    </section>
   );
 };

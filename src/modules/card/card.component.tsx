@@ -16,7 +16,7 @@ import Image from "next/image";
 
 export const CardComponent = () => {
   return (
-    <main className="">
+    <section>
       <Title className="text-center">Card</Title>
       <section className="w-[80%] mx-auto grid grid-cols-2 gap-8">
         <Card>
@@ -65,6 +65,6 @@ export const CardComponent = () => {
           </CardContent>
         </Card>
       </section>
-    </main>
+    </section>
   );
 };

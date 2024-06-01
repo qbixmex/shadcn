@@ -15,7 +15,7 @@ export const InputOTPComponent = () => {
   const [value, setValue] = useState("");
 
   return (
-    <main className="max-w-xl mx-auto sm:text-lg">
+    <section className="max-w-xl mx-auto sm:text-lg">
       <Title className="text-center mb-10">Input OTP</Title>
       <section className="inline-flex justify-center w-full mb-10">
         <InputOTP
@@ -48,6 +48,6 @@ export const InputOTPComponent = () => {
         <h2 className="text-3xl text-slate-800 font-bold mb-2">Captured Value</h2>
         <p className="text-sky-500">{value}</p>
       </section>
-    </main>
+    </section>
   );
 };

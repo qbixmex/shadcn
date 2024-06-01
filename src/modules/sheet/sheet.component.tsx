@@ -24,7 +24,7 @@ export const SheetComponent = () => {
   const [ open, setOpen ] = useState(false);
 
   return (
-    <main className="max-w-xl mx-auto sm:text-lg">
+    <section className="max-w-xl mx-auto sm:text-lg">
       <Title className="text-center mb-10">Sheet</Title>
 
       <section className="flex justify-center gap-2 mb-10">
@@ -84,6 +84,6 @@ export const SheetComponent = () => {
           </Sheet>
         ))}
       </section>
-    </main>
+    </section>
   );
 };

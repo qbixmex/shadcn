@@ -37,7 +37,7 @@ export const CommandComponent = () => {
   }, []);
   
   return (
-    <main className="max-w-xl mx-auto sm:text-lg">
+    <section className="max-w-xl mx-auto sm:text-lg">
       <Title className="text-center">Command</Title>
       <section className="items-top flex space-x-2">
         <CommandDialog open={open} onOpenChange={() => setOpen(false)}>
@@ -109,6 +109,6 @@ export const CommandComponent = () => {
           </kbd>
         </p>
       </section>
-    </main>
+    </section>
   );
 };

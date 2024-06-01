@@ -35,7 +35,7 @@ export const ContextMenuComponent = () => {
   }, [router]);
 
   return (
-    <main className="min-h-[500px]">
+    <section className="min-h-[500px]">
       <Title className="text-center mb-10">Context Menu</Title>
       <section className="w-[200px] mx-auto h-[150px] border border-gray-200 rounded-lg flex items-center justify-center">
         <ContextMenu>
@@ -90,6 +90,6 @@ export const ContextMenuComponent = () => {
           </ContextMenuContent>
         </ContextMenu>
       </section>
-    </main>
+    </section>
   );
 };

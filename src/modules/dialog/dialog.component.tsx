@@ -22,7 +22,7 @@ export const DialogComponent = () => {
   };
 
   return (
-    <main className="max-w-sm mx-auto">
+    <section className="max-w-sm mx-auto">
       <Title className="text-center">Dialog</Title>
       <Dialog>
         <DialogTrigger asChild>
@@ -60,6 +60,6 @@ export const DialogComponent = () => {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-    </main>
+    </section>
   );
 };

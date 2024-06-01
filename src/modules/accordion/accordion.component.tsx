@@ -37,7 +37,7 @@ const items: Item[] = [
 
 export const Accordion = () => {
   return (
-    <main className="max-w-lg mx-auto">
+    <section className="max-w-lg mx-auto">
       <Title>Alert</Title>
       <AccordionUI type="single" collapsible>
         {items.map(({ id, question, answer }) => (
@@ -47,6 +47,6 @@ export const Accordion = () => {
           </AccordionItem>
         ))}
       </AccordionUI>
-    </main>
+    </section>
   );
 };

@@ -6,7 +6,7 @@ import { Title } from "@/modules/components";
 export const BadgeComponent = () => {
 
   return (
-    <main>
+    <section>
       <Title>Badge</Title>
       <div className="inline-flex gap-2 mb-3">
         <Badge>default</Badge>
@@ -27,6 +27,6 @@ export const BadgeComponent = () => {
         <Badge variant="warning_outline">warning</Badge>
         <Badge variant="destructive_outline">destructive</Badge>
       </div>
-    </main>
+    </section>
   );
 };

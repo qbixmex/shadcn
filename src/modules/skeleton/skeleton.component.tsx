@@ -14,7 +14,7 @@ export const SkeletonComponent = async () => {
   const data = await getData();
 
   return (
-    <main className="w-[95%] mx-auto sm:text-lg">
+    <section className="w-[95%] mx-auto sm:text-lg">
       <Title className="text-center mb-10">Skeleton</Title>
 
       <section className="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -41,6 +41,6 @@ export const SkeletonComponent = async () => {
           ))
         }
       </section>
-    </main>
+    </section>
   );
 };

@@ -26,7 +26,7 @@ export const ProgressComponent = () => {
   }, [])
 
   return (
-    <main className="max-w-xl mx-auto sm:text-lg">
+    <section className="max-w-xl mx-auto sm:text-lg">
       <Title className="text-center mb-10">Input OTP</Title>
       
       <section className="inline-flex justify-center w-full mb-10">
@@ -37,6 +37,6 @@ export const ProgressComponent = () => {
           "bg-green-500": progress >= 75,
         })} />
       </section>
-    </main>
+    </section>
   );
 };

@@ -17,7 +17,7 @@ import { Title } from "@/modules/components";
 
 export const Alert = () => {
   return (
-    <div className="grid gap-3">
+    <section className="grid gap-3">
       <Title>Alert</Title>
       <AlertUI>
         <EarthIcon className="h-4 w-4" />
@@ -66,6 +66,6 @@ export const Alert = () => {
           This resource has been deleted !
         </AlertDescription>
       </AlertUI>
-    </div>
+    </section>
   );
 };

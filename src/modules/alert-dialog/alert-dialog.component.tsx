@@ -19,7 +19,7 @@ export const AlertDialogComponent = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
-    <main>
+    <section>
       <Title>Alert Dialog</Title>
       <section className="grid grid-cols-2 gap-3">
         <AlertDialog
@@ -48,6 +48,6 @@ export const AlertDialogComponent = () => {
           onClick={() => setDialogOpen(true)}
         >Open Dialog Manually</Button>
       </section>
-    </main>
+    </section>
   );
 };

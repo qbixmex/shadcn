@@ -17,7 +17,7 @@ export const CalendarComponent = () => {
   });
 
   return (
-    <main>
+    <section>
       <Title>Calendar</Title>
 
       <section className="flex flex-col gap-5 md:flex-row md:flew-wrap mb-5">
@@ -63,6 +63,6 @@ export const CalendarComponent = () => {
           })).join(", ")}
         </p>
       </section>
-    </main>
+    </section>
   );
 };
