@@ -26,6 +26,7 @@ const links = [
   { name: "sheet", href: "sheet" },
   { name: "skeleton", href: "skeleton" },
   { name: "slider", href: "slider" },
+  { name: "sonner", href: "sonner" },
 ];
 
 type Props = { children: React.ReactNode };
