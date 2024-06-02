@@ -1,12 +1,3 @@
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 import { Title } from "../components";
 import { payments } from "@/data";
 import { DataTable } from "./data-table";
