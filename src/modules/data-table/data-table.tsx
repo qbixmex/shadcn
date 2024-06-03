@@ -219,9 +219,29 @@ export const DataTable = <TData, TValue>({
         </Table>
       </div>
       <div className="flex justify-between py-4">
-        <div className="flex-1 text-sm text-muted-foreground">
-          {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
+        <div className="flex items-center gap-3">
+          <div className="flex-1 text-sm text-muted-foreground">
+            {table.getFilteredSelectedRowModel().rows.length} of{" "}
+            {table.getFilteredRowModel().rows.length} row(s) selected.
+          </div>
+          <div>
+            <Select onValueChange={(value) => table.setPageSize(+value)}>
+              <SelectTrigger className="w-fit">
+                <SelectValue placeholder="10 rows per page" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Rows per page</SelectLabel>
+                  <SelectItem value="10">10 rows per page</SelectItem>
+                  <SelectItem value="20">20 rows per page</SelectItem>
+                  <SelectItem value="30">30 rows per page</SelectItem>
+                  <SelectItem value="40">40 rows per page</SelectItem>
+                  <SelectItem value="50">50 rows per page</SelectItem>
+                  <SelectItem value="100">100 rows per page</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
         <div className="flex gap-3">
           <Button

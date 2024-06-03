@@ -13,7 +13,7 @@ export const DataTableComponent = async () => {
 
   return (
     <section className="w-full sm:text-lg">
-      <Title className="text-center mb-10">Table</Title>
+      <Title className="text-center mb-10">Data Table</Title>
 
       <DataTable columns={columns} data={data} />
     </section>

@@ -21,6 +21,6 @@ export * from "./sheet";
 export * from "./skeleton";
 export * from "./slider";
 export * from "./sonner";
-export * from "./table";
+export * from "./data-table";
 export * from "./tabs";
 export * from "./toast";
