@@ -84,7 +84,7 @@ export const DataTable = <TData, TValue>({
       <div className="w-full flex justify-between gap-3 py-4">
         <div className="relative w-[400px]">
           <Input
-            placeholder="Filter names ..."
+            placeholder="Type your filter terms (client name, email, status)"
             value={(table.getColumn("clientName")?.getFilterValue() as string) ?? ""}
             onChange={(event) => {
               setCurrentStatus("all");
