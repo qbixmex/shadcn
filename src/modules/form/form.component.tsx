@@ -5,12 +5,20 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Title } from "../components";
 import { Button } from "@/components/ui/button";
-import { EyeIcon, EyeOffIcon } from "lucide-react";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { CalendarIcon, EyeIcon, EyeOffIcon } from "lucide-react";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Calendar } from "@/components/ui/calendar"
+import { cn } from "@/lib/utils";
+import { format } from "date-fns";
 
 const formSchema = z.object({
   username: z.string().min(2).max(10),
@@ -18,7 +26,10 @@ const formSchema = z.object({
   password: z.string().min(6).max(20),
   passwordConfirmation: z.string().min(6).max(20),
   gender: z.enum(["male", "female", "unisex"], {
-    message: "Select gender clouting.",
+    message: "Select gender cloth !",
+  }),
+  birthday: z.date({
+    required_error: "A date of birth is required.",
   }),
 }).refine(data => data.password === data.passwordConfirmation, {
   message: "Password Confirmation does't match !",
@@ -135,7 +146,8 @@ export const FormComponent = () => {
                 )}
               />
             </div>
-            <div>
+            <div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-3">
+              {/* RADIO GROUP */}
               <FormField
                 control={form.control}
                 name="gender"
@@ -179,6 +191,51 @@ export const FormComponent = () => {
 
                       </RadioGroup>
                     </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              {/* DATA PICKER */}
+              <FormField
+                control={form.control}
+                name="birthday"
+                render={({ field }) => (
+                  <FormItem className="flex flex-col">
+                    <FormLabel>Date of birth</FormLabel>
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <FormControl>
+                          <Button
+                            variant={"outline"}
+                            className={cn(
+                              "w-[240px] pl-3 text-left font-normal",
+                              !field.value && "text-muted-foreground"
+                            )}
+                          >
+                            {field.value ? (
+                              format(field.value, "PPP")
+                            ) : (
+                              <span>Pick a date</span>
+                            )}
+                            <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                          </Button>
+                        </FormControl>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0" align="start">
+                        <Calendar
+                          mode="single"
+                          selected={field.value}
+                          onSelect={field.onChange}
+                          disabled={(date) =>
+                            date > new Date() || date < new Date("1900-01-01")
+                          }
+                          initialFocus
+                        />
+                      </PopoverContent>
+                    </Popover>
+                    <FormDescription>
+                      Your date of birth is used to calculate your age.
+                    </FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
