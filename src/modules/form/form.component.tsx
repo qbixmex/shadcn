@@ -19,6 +19,7 @@ import {
 import { Calendar } from "@/components/ui/calendar"
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
+import { Textarea } from "@/components/ui/textarea";
 
 const formSchema = z.object({
   username: z.string().min(2).max(10),
@@ -31,6 +32,9 @@ const formSchema = z.object({
   birthday: z.date({
     required_error: "A date of birth is required.",
   }),
+  description: z.string()
+    .min(8, { message: "Description must be at least 8 characters." })
+    .max(255, { message: "Description must not be longer than 255 characters." }),
 }).refine(data => data.password === data.passwordConfirmation, {
   message: "Password Confirmation does't match !",
   path: ["passwordConfirmation"],
@@ -45,6 +49,7 @@ export const FormComponent = () => {
       email: "",
       password: "",
       passwordConfirmation: "",
+      description: "",
     },
   });
 
@@ -240,6 +245,30 @@ export const FormComponent = () => {
                   </FormItem>
                 )}
               />
+            </div>
+            <div className="grid w-full gap-3">
+              <FormField
+                control={form.control}
+                name="description"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Description</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        placeholder="Write a brief product description."
+                        className="resize-none"
+                        rows={5}
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormDescription>
+                      You can <span>@mention</span> other users and organizations.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              >
+              </FormField>
             </div>
             <div className="text-right md:text-right">
               <Button type="submit" variant="secondary" className="w-full md:w-fit">Submit</Button>
