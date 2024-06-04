@@ -9,7 +9,7 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { Input } from "@/components/ui/input";
 import { Title } from "../components";
 import { Button } from "@/components/ui/button";
-import { CalendarIcon, EyeIcon, EyeOffIcon } from "lucide-react";
+import { CalendarIcon, Check, ChevronsUpDown, EyeIcon, EyeOffIcon } from "lucide-react";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import {
   Popover,
@@ -21,6 +21,7 @@ import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, } from "@/components/ui/command";
 
 const formSchema = z.object({
   username: z.string().min(2).max(10),
@@ -36,13 +37,28 @@ const formSchema = z.object({
   description: z.string()
     .min(8, { message: "Description must be at least 8 characters." })
     .max(255, { message: "Description must not be longer than 255 characters." }),
-  size: z.enum(["sm", "m", "lg", "xl", "xxl"],{
+  size: z.enum(["sm", "m", "lg", "xl", "xxl"], {
     message: "Please select a valid cloth size, (sm, m, lg, xl, xxl) !"
+  }),
+  language: z.string({
+    required_error: "Please select a language !",
   }),
 }).refine(data => data.password === data.passwordConfirmation, {
   message: "Password Confirmation does't match !",
   path: ["passwordConfirmation"],
 });
+
+const languages = [
+  { label: "English", value: "en" },
+  { label: "French", value: "fr" },
+  { label: "German", value: "de" },
+  { label: "Spanish", value: "es" },
+  { label: "Portuguese", value: "pt" },
+  { label: "Russian", value: "ru" },
+  { label: "Japanese", value: "ja" },
+  { label: "Korean", value: "ko" },
+  { label: "Chinese", value: "zh" },
+] as const;
 
 export const FormComponent = () => {
   // 1. Define your form.
@@ -275,8 +291,8 @@ export const FormComponent = () => {
               >
               </FormField>
             </div>
-            {/* SELECT */}
-            <div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-3">
+            {/* SIZE AND LANGUAGE */}
+            <div className="grid grid-cols-1 items-center gap-2 md:grid-cols-2 md:gap-3">
               <FormField
                 control={form.control}
                 name="size"
@@ -297,6 +313,66 @@ export const FormComponent = () => {
                         <SelectItem value="xxl">Extra Extra Large</SelectItem>
                       </SelectContent>
                     </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="language"
+                render={({ field }) => (
+                  <FormItem className="flex flex-col">
+                    <FormLabel className="mb-2">Language</FormLabel>
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <FormControl>
+                          <Button
+                            variant="outline"
+                            role="combobox"
+                            className={cn(
+                              "w-[200px] justify-between",
+                              !field.value && "text-muted-foreground"
+                            )}
+                          >
+                            {field.value
+                              ? languages.find(
+                                (language) => language.value === field.value
+                              )?.label
+                              : "Select language"}
+                            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                          </Button>
+                        </FormControl>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-[200px] p-0">
+                        <Command>
+                          <CommandInput placeholder="Search language..." />
+                          <CommandList>
+                            <CommandEmpty>No language found.</CommandEmpty>
+                            <CommandGroup>
+                              {languages.map((language) => (
+                                <CommandItem
+                                  value={language.label}
+                                  key={language.value}
+                                  onSelect={() => {
+                                    form.setValue("language", language.value)
+                                  }}
+                                >
+                                  <Check
+                                    className={cn(
+                                      "mr-2 h-4 w-4",
+                                      language.value === field.value
+                                        ? "opacity-100"
+                                        : "opacity-0"
+                                    )}
+                                  />
+                                  {language.label}
+                                </CommandItem>
+                              ))}
+                            </CommandGroup>
+                          </CommandList>
+                        </Command>
+                      </PopoverContent>
+                    </Popover>
                     <FormMessage />
                   </FormItem>
                 )}
