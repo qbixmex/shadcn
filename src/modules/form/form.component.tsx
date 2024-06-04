@@ -10,12 +10,16 @@ import { Input } from "@/components/ui/input";
 import { Title } from "../components";
 import { Button } from "@/components/ui/button";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 const formSchema = z.object({
   username: z.string().min(2).max(10),
   email: z.string().email(),
   password: z.string().min(6).max(20),
   passwordConfirmation: z.string().min(6).max(20),
+  gender: z.enum(["male", "female", "unisex"], {
+    message: "Select gender clouting.",
+  }),
 }).refine(data => data.password === data.passwordConfirmation, {
   message: "Password Confirmation does't match !",
   path: ["passwordConfirmation"],
@@ -29,7 +33,7 @@ export const FormComponent = () => {
       username: "",
       email: "",
       password: "",
-      passwordConfirmation: ""
+      passwordConfirmation: "",
     },
   });
 
@@ -125,6 +129,55 @@ export const FormComponent = () => {
                         type={showPasswordConfirmation ? "text" : "password"}
                         {...field}
                       />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div>
+              <FormField
+                control={form.control}
+                name="gender"
+                render={({ field }) => (
+                  <FormItem className="space-y-3">
+                    <FormLabel>Select Gender</FormLabel>
+                    <FormControl>
+                      <RadioGroup
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                        className="flex flex-col space-y-1"
+                      >
+
+                        {/* MALE */}
+                        <FormItem className="flex items-center space-x-3 space-y-0">
+                          <FormControl>
+                            <RadioGroupItem value="male" />
+                          </FormControl>
+                          <FormLabel className="font-normal">
+                            Male
+                          </FormLabel>
+                        </FormItem>
+
+                        {/* FEMALE */}
+                        <FormItem className="flex items-center space-x-3 space-y-0">
+                          <FormControl>
+                            <RadioGroupItem value="female" />
+                          </FormControl>
+                          <FormLabel className="font-normal">
+                            Female
+                          </FormLabel>
+                        </FormItem>
+
+                        {/* UNISEX */}
+                        <FormItem className="flex items-center space-x-3 space-y-0">
+                          <FormControl>
+                            <RadioGroupItem value="unisex" />
+                          </FormControl>
+                          <FormLabel className="font-normal">Unisex</FormLabel>
+                        </FormItem>
+
+                      </RadioGroup>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
