@@ -20,6 +20,7 @@ import { Calendar } from "@/components/ui/calendar"
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const formSchema = z.object({
   username: z.string().min(2).max(10),
@@ -35,6 +36,9 @@ const formSchema = z.object({
   description: z.string()
     .min(8, { message: "Description must be at least 8 characters." })
     .max(255, { message: "Description must not be longer than 255 characters." }),
+  size: z.enum(["sm", "m", "lg", "xl", "xxl"],{
+    message: "Please select a valid cloth size, (sm, m, lg, xl, xxl) !"
+  }),
 }).refine(data => data.password === data.passwordConfirmation, {
   message: "Password Confirmation does't match !",
   path: ["passwordConfirmation"],
@@ -246,6 +250,7 @@ export const FormComponent = () => {
                 )}
               />
             </div>
+            {/* DESCRIPTION */}
             <div className="grid w-full gap-3">
               <FormField
                 control={form.control}
@@ -270,8 +275,39 @@ export const FormComponent = () => {
               >
               </FormField>
             </div>
+            {/* SELECT */}
+            <div className="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-3">
+              <FormField
+                control={form.control}
+                name="size"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Size</FormLabel>
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select a cloth size" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        <SelectItem value="sm">Small</SelectItem>
+                        <SelectItem value="m">Medium</SelectItem>
+                        <SelectItem value="lg">Large</SelectItem>
+                        <SelectItem value="xl">Extra Large</SelectItem>
+                        <SelectItem value="xxl">Extra Extra Large</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
             <div className="text-right md:text-right">
-              <Button type="submit" variant="secondary" className="w-full md:w-fit">Submit</Button>
+              <Button
+                type="submit"
+                variant="secondary"
+                className="w-full md:w-fit"
+              >Submit</Button>
             </div>
           </form>
         </Form>
