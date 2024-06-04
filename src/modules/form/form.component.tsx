@@ -11,6 +11,7 @@ import { Title } from "../components";
 import { Button } from "@/components/ui/button";
 import { CalendarIcon, Check, ChevronsUpDown, EyeIcon, EyeOffIcon } from "lucide-react";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Switch } from "@/components/ui/switch";
 import {
   Popover,
   PopoverContent,
@@ -43,10 +44,16 @@ const formSchema = z.object({
   language: z.string({
     required_error: "Please select a language !",
   }),
-}).refine(data => data.password === data.passwordConfirmation, {
-  message: "Password Confirmation does't match !",
-  path: ["passwordConfirmation"],
-});
+  terms: z.boolean().default(false),
+})
+  .refine(data => data.terms === true, {
+    message: "You must agree with our terms and conditions !",
+    path: ["terms"],
+  })
+  .refine(data => data.password === data.passwordConfirmation, {
+    message: "Password Confirmation does't match !",
+    path: ["passwordConfirmation"],
+  });
 
 const languages = [
   { label: "English", value: "en" },
@@ -65,11 +72,16 @@ export const FormComponent = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
-      email: "",
-      password: "",
-      passwordConfirmation: "",
-      description: "",
+      username: "qbix",
+      email: "qbix@gmail.com",
+      password: "123456",
+      passwordConfirmation: "123456",
+      description: "Lorem ipsum dolor dolem",
+      gender: "male",
+      birthday: new Date("1979-12-17"),
+      size: "m",
+      language: "en",
+      terms: false,
     },
   });
 
@@ -374,6 +386,31 @@ export const FormComponent = () => {
                       </PopoverContent>
                     </Popover>
                     <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div className="grid grid-cols-1 items-center md:grid-cols-2">
+              <FormField
+                control={form.control}
+                name="terms"
+                render={({ field }) => (
+                  <FormItem className="col-start-1 md:col-start-2 flex flex-row items-center justify-between rounded-lg border p-4">
+                    <div className="space-y-0.5">
+                      <FormLabel className="text-base">
+                        Terms
+                      </FormLabel>
+                      <FormDescription>
+                        Are you agree with our terms and conditions ?
+                      </FormDescription>
+                      <FormMessage className="w-full" />
+                    </div>
+                    <FormControl>
+                      <Switch
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                      />
+                    </FormControl>
                   </FormItem>
                 )}
               />
