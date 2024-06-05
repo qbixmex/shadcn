@@ -418,7 +418,7 @@ export const FormComponent = () => {
             <div className="text-right md:text-right">
               <Button
                 type="submit"
-                variant="secondary"
+                variant="default"
                 className="w-full md:w-fit"
               >Submit</Button>
             </div>
