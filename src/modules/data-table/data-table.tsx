@@ -109,6 +109,7 @@ export const DataTable = <TData, TValue>({
           {(Object.keys(rowSelection).length !== 0) && (
             <Button
               variant="destructive"
+              size="sm"
               onClick={() => {
                 const ids = table.getSelectedRowModel().rows.map((row) => {
                   return (row.original as Payment).id
@@ -117,7 +118,7 @@ export const DataTable = <TData, TValue>({
                 // Clear row selection
                 setRowSelection({});
               }}
-            ><Trash size={22} /></Button>
+            ><Trash size={18} /></Button>
           )}
           <Select
             value={currentStatus}

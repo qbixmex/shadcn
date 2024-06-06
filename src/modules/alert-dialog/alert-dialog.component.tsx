@@ -19,7 +19,7 @@ export const AlertDialogComponent = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
-    <section>
+    <section className="max-w-lg mx-auto">
       <Title>Alert Dialog</Title>
       <section className="grid grid-cols-2 gap-3">
         <AlertDialog

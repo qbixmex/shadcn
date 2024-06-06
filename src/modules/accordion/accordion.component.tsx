@@ -38,7 +38,7 @@ const items: Item[] = [
 export const Accordion = () => {
   return (
     <section className="max-w-lg mx-auto">
-      <Title>Alert</Title>
+      <Title>Accordion</Title>
       <AccordionUI type="single" collapsible>
         {items.map(({ id, question, answer }) => (
           <AccordionItem key={id} value={id}>

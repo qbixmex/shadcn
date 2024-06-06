@@ -48,6 +48,33 @@ const config = {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        blue: {
+          DEFAULT: '#1fb6ff',
+        },
+        purple: {
+          DEFAULT: '#7e5bef',
+        },
+        pink: {
+          DEFAULT: '#ff49db',
+        },
+        orange: {
+          DEFAULT: '#ff7849',
+        },
+        green: {
+          DEFAULT: '#13ce66',
+        },
+        yellow: {
+          DEFAULT: '#ffc82c',
+        },
+        "gray-dark": {
+          DEFAULT: '#273444',
+        },
+        gray: {
+          DEFAULT: '#8492a6',
+        },
+        "gray-light": {
+          DEFAULT: '#d3dce6',
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",

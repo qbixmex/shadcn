@@ -15,7 +15,7 @@ export const ToastComponent = () => {
 
       <section className="flex flex-wrap justify-center gap-3">
         <Button
-          variant="secondary"
+          variant="default"
           onClick={() => {
             toast({
               description: "Your message has been sent.",
@@ -25,7 +25,7 @@ export const ToastComponent = () => {
           Simple Toast
         </Button>
         <Button
-          variant="secondary"
+          variant="default"
           onClick={() => {
             toast({
               title: "Uh oh! Something went wrong.",
@@ -37,7 +37,7 @@ export const ToastComponent = () => {
         </Button>
 
         <Button
-          variant="secondary"
+          variant="default"
           onClick={() => {
             toast({
               title: "Uh oh! Something went wrong.",

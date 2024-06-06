@@ -11,7 +11,7 @@ export const Title: FC<Props> = ({ children, className = "", style }) => {
   return (
     <h1
       className={cn(
-        "text-5xl font-black text-stone-700 mb-5",
+        "text-5xl font-black text-stone-700 mb-5 dark:text-neutral-50",
         className
       )}
       style={style}

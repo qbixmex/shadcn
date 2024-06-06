@@ -43,8 +43,8 @@ export const CardComponent = () => {
             </section>
           </CardContent>
           <CardFooter className="w-full inline-flex justify-end gap-2">
-            <Button variant="secondary">cancel</Button>
-            <Button variant="primary">register</Button>
+            <Button variant="info">cancel</Button>
+            <Button variant="default">register</Button>
           </CardFooter>
         </Card>
 

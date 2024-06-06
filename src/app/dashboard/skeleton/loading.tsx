@@ -1,9 +1,13 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Title } from "@/modules";
 
 export default function Loading() {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-3 gap-3">
+    <div className="w-[95%] mx-auto sm:text-lg">
+      <Title className="text-center mb-10">Skeleton</Title>
+
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-3">
         {
           [1,2,3,4,5,6,7,8,9].map((n) => (
             <Card key={n}>
@@ -25,5 +29,6 @@ export default function Loading() {
           ))
         }
     </section>
+    </div>
   );
 }

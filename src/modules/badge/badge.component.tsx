@@ -8,7 +8,7 @@ export const BadgeComponent = () => {
   return (
     <section>
       <Title>Badge</Title>
-      <div className="inline-flex gap-2 mb-3">
+      <div className="flex gap-2 mb-3">
         <Badge>default</Badge>
         <Badge variant="outline">outline</Badge>
         <Badge variant="primary" capitalize>primary</Badge>
@@ -19,7 +19,7 @@ export const BadgeComponent = () => {
         <Badge variant="destructive">destructive</Badge>
       </div>
 
-      <div className="inline-flex gap-2">
+      <div className="flex gap-2">
         <Badge variant="primary_outline">primary</Badge>
         <Badge variant="secondary_outline">secondary</Badge>
         <Badge variant="info_outline">info</Badge>

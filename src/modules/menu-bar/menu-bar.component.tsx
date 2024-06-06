@@ -126,7 +126,7 @@ export const MenuBarComponent = () => {
 
         <article>
           <main>
-            <h1 className="text-3xl font-bold text-slate-700 mb-2">Article Title</h1>
+            <h2 className="text-3xl font-bold text-slate-700 mb-2 dark:text-slate-50">Article Title</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio rem, officia ut eos laborum harum similique suscipit est accusamus veniam, excepturi ipsa veritatis rerum dolorum odit assumenda libero, consectetur eaque.</p>
           </main>
         </article>

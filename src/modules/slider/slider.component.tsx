@@ -18,7 +18,7 @@ export const SliderComponent: FC<Readonly<Props>> = ({ className, ...props }) =>
       <Title className="text-center mb-10">Slider</Title>
 
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold text-stone-700 mb-5">
+        <h2 className="text-2xl font-semibold text-stone-700 mb-5 dark:text-neutral-200">
           Single Slider Value: <span className="text-blue-600">{sliderValue}</span>
         </h2>
         <Slider
@@ -27,22 +27,22 @@ export const SliderComponent: FC<Readonly<Props>> = ({ className, ...props }) =>
           onValueChange={(value) => setSliderValue(value[0])}
           max={100}
           step={10}
-          barColor="bg-emerald-600"
+          barColor="bg-blue-500"
           {...props}
         />
       </section>
 
       <section>
         <div className="text-stone-700 font-semibold">
-          <h2 className="text-2xl mb-2">
+          <h2 className="text-2xl mb-2 dark:text-neutral-100">
             Range Slider
           </h2>
           <div className="flex justify-start gap-5">
-            <p className="text-xl mb-5">
+            <p className="text-xl mb-5 dark:text-neutral-200">
               Min price: <span className="text-blue-600">{rangeValues[0]}</span>
             </p>
             <span>|</span>
-            <p className="text-xl mb-5">
+            <p className="text-xl mb-5 dark:text-neutral-200">
               Max price: <span className="text-blue-600">{rangeValues[1]}</span>
             </p>
           </div>
@@ -55,7 +55,7 @@ export const SliderComponent: FC<Readonly<Props>> = ({ className, ...props }) =>
           max={2000}
           step={100}
           {...props}
-          barColor="bg-blue-600"
+          barColor="bg-blue-500"
         />
       </section>
     </section>

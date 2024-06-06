@@ -45,7 +45,7 @@ export const InputOTPComponent = () => {
 
       </section>
       <section className="text-center">
-        <h2 className="text-3xl text-slate-800 font-bold mb-2">Captured Value</h2>
+        <h2 className="text-3xl text-slate-800 font-bold mb-2 dark:text-slate-50">Captured Value</h2>
         <p className="text-sky-500">{value}</p>
       </section>
     </section>

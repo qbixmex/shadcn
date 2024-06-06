@@ -48,20 +48,23 @@ export const CalendarComponent = () => {
       </section>
 
       <section>
-        <h2 className="text-3xl font-extrabold text-stone-700 mb-1">Single Date Selected</h2>
+        <h2 className="text-3xl font-extrabold text-stone-700 mb-1 dark:text-neutral-50">Single Date Selected</h2>
         <p className="text-lg font-light text-stone-700">{smallDate}</p>
 
-        <div className="my-5"></div>
-
-        <h2 className="text-3xl font-extrabold text-stone-700 mb-1">Multiple Dates Selected</h2>
-        <p className="text-lg font-light text-stone-700">
-          {multipleDates?.map((date) => date.toLocaleString("es-MX", {
-            weekday: "short",
-            day: "numeric",
-            month: "long",
-            year: "numeric",
-          })).join(", ")}
-        </p>
+        {(multipleDates?.length !== 0) && (
+          <>
+            <div className="my-5"></div>
+            <h2 className="text-3xl font-extrabold text-stone-700 mb-1 dark:text-neutral-50">Multiple Dates Selected</h2>
+            <p className="text-lg font-light text-stone-700 dark:text-neutral-100">
+              {multipleDates?.map((date) => date.toLocaleString("es-MX", {
+                weekday: "short",
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })).join(", ")}
+            </p>
+          </>
+        )}
       </section>
     </section>
   );
