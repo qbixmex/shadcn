@@ -8,13 +8,49 @@ const alertVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-background text-foreground",
-        primary: "border-blue-600 text-blue-600 dark:bg-blue-600 [&>svg]:text-blue-600",
-        warning: "border-amber-500 text-amber-600 dark:bg-amber-500 [&>svg]:text-amber-600",
-        info: "border-cyan-600 text-cyan-600 dark:bg-cyan-600 [&>svg]:text-cyan-600",
-        success: "border-green-500 text-green-800 dark:bg-green-500 [&>svg]:text-green-800",
-        destructive:
-          "border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive",
+        default:cn([
+          "bg-background",
+          "text-foreground"
+        ]),
+        primary: cn([
+          "border-blue-600",
+          "text-blue-600",
+          "[&>svg]:text-blue-600",
+          "dark:bg-blue-700",
+          "dark:text-blue-50",
+          "dark:[&>svg]:text-blue-50"
+        ]),
+        warning: cn([
+          "border-amber-500",
+          "text-amber-500",
+          "dark:bg-amber-500",
+          "dark:text-amber-50",
+          "[&>svg]:text-amber-600",
+          "dark:[&>svg]:text-amber-50",
+        ]),
+        info: cn([
+          "border-cyan-600",
+          "text-cyan-600",
+          "[&>svg]:text-cyan-600",
+          "dark:bg-cyan-600",
+          "dark:text-cyan-50",
+          "dark:[&>svg]:text-cyan-50",
+        ]),
+        success: cn([
+          "border-green-500",
+          "text-green-800",
+          "[&>svg]:text-green-800",
+          "dark:bg-green-500",
+        ]),
+        destructive: cn([
+          "border-destructive/50",
+          "text-destructive",
+          "[&>svg]:text-destructive",
+          "dark:bg-destructive",
+          "dark:border-destructive",
+          "dark:text-red-50",
+          "dark:[&>svg]:text-red-50",
+        ])
       },
     },
     defaultVariants: {

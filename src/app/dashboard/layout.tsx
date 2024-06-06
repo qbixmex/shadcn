@@ -2,8 +2,7 @@
 // https://tailwindcomponents.com/component/tailwind-css-admin-dashboard-layout
 
 import { FacebookIcon, GithubIcon, InstagramIcon, TwitterIcon } from "@/modules";
-import { AsideNavigation, Navigation } from "@/components/layout/navigation";
-import { links } from "@/components/layout/links";
+import { AsideNavigation, Navigation, links } from "@/components";
 
 type Props = { children: React.ReactNode };
 
